@@ -1,0 +1,100 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    height:120px;
+    width:100%;
+    position:relative;
+  }
+  
+  nav a{
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    font-size:25px;
+  }
+  
+  nav>.head{
+    display:inline;
+  }
+  
+  nav>.head>.titre{
+    display:inline-block;
+    font-size:22px;
+    padding:10px 10px 10px 10px
+  }
+  
+  nav>.button{
+    display:none;
+  }
+  
+  nav>.lien{
+    display:inline;
+    float:right;
+    font-size:20px;
+    margin-top:30px;
+  }
+  
+  nav>.lien>a{
+    display:inline-block;
+    padding:13px 10px 13px 10px;
+    text-decoration:none;
+    color:#302f2f;
+  }
+  
+  nav>#tiret{
+    display:none;
+  }
+a{
+    text-decoration:none;
+    color:#302f2f;
+}
+  a:hover{
+    color: #302f2fa1;
+    font-size: 30px;
+}
+
+  @media screen and (max-width:600px){
+    nav>.button{
+      display:inline-block;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+    
+    nav>.button>label{
+      display:inline-block;
+      width:50px;
+      height:50px;
+      padding:13px;
+    }
+    
+    nav #tiret:checked~.button>label,nav>.button>label:hover{
+      background-color:rgba(0,0,0,.3);
+    }
+    
+    nav>.button>label>span{
+      display:block;
+      width:25px;
+      height:10px;
+      border-top:2px solid #040404;
+    }
+    nav>.lien{
+      position:absolute;
+      display:block;
+      width:100%;
+      height:0;transition:all .3s ease-in;
+      overflow-y:hidden;
+      top:90px;
+      left:0;
+    }
+    
+    nav>.lien>a{
+      display:block;
+      width:100%;
+    }
+    
+    nav>#tiret:not(:checked)~.lien{height:0}nav>#tiret:checked~.lien{
+      height:calc(100vh - 50px);
+      overflow-y:auto
+    }
+  }
